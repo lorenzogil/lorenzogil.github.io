@@ -215,13 +215,18 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author:
+   Author: Lorenzo Gil
    ========================================================================== */
 
+body { width: 80%; margin: 0 auto; font-size: 10pt; }
 
+section, footer { border-top: 1px solid #ccc; }
 
+.skill { float: left; width: 25%; margin: 0; }
 
+.column { float: left; width: 50%; margin: 0; }
 
+h2 { margin-bottom: 0; }
 
 
 
