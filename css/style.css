@@ -224,9 +224,31 @@ section, footer { border-top: 1px solid #ccc; }
 
 .skill { float: left; width: 25%; margin: 0; }
 
-.column { float: left; width: 50%; margin: 0; }
+h2 {
+    color: #555555;
+    margin-bottom: 0;
+    line-height: 28px;
+    padding-left: 36px;
+    background: transparent url(../img/sprite.png) no-repeat 0 0;
+}
 
-h2 { margin-bottom: 0; }
+#python h2 { background-position: 0 0; }
+#javascript h2 { background-position: 0px -28px; }
+#security h2 { background-position: 0px -56px; }
+#visualization h2 { background-position: 0px -84px; }
+#html h2 { background-position: 0px -112px; }
+#css h2 { background-position: 0px -140px; }
+#middleware h2 { background-position: 0px -168px; }
+#opensource h2 { background-position: 0px -196px; }
+#courses-and-talks h2 { background-position: 0px -224px; }
+#conferences h2 { background-position: 0px -252px; }
+#experience h2 { background-position: 0px -280px; }
+#education h2 { background-position: 0px -308px; }
+#opensource-projects h2 { background-position: 0px -336px; }
+#tools h2 { background-position: 0px -364px; }
+#hobbies h2 { background-position: 0px -392px; }
+
+.column { float: left; width: 50%; margin: 0; }
 
 
 
