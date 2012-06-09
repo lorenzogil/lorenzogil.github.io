@@ -218,11 +218,15 @@ td { vertical-align: top; }
    Author: Lorenzo Gil
    ========================================================================== */
 
-body { width: 80%; margin: 0 auto; font-size: 10pt; }
+body { width: 80%; margin: 0 auto; font-size: 9pt; }
+
+section { padding: 1em 0; }
 
 section, footer { border-top: 1px solid #ccc; }
 
-.skill { float: left; width: 25%; margin: 0; }
+.skill { float: left; width: 24%; margin: 0; height: 14em; }
+
+.skill p { padding-right: 2em; }
 
 h2 {
     color: #555555;
