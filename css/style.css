@@ -220,6 +220,8 @@ td { vertical-align: top; }
 
 body { font-size: 9pt; }
 
+header p { float: right; width: 80%; margin-top: 1em; color: #555555; font-size: 18pt; }
+
 li { margin: 0.7em 0; }
 
 .container { width: 80%; margin: 0 auto; }
@@ -264,7 +266,7 @@ footer { color: #ffffff; background: #555555; }
 
 footer h2, footer a { color: #ffffff; }
 footer a:visited { color: #cccccc; }
-
+footer textarea { display: block;}
 
 
 

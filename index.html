@@ -34,7 +34,9 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <header class="container">
-
+    <p>Hello, I am Lorenzo Gil Sánchez, welcome to my homepage.</p>
+    <p>This is what I do</p>
+    <img src="img/lgs.jpg" alt="Lorenzo Gil Sánchez" width="159" height="183" />
   </header>
 
   <div role="main" class="container">
@@ -207,8 +209,19 @@
           <li>Twitter: <a href="https://twitter.com/#!/lorenzogil">lorenzogil</a></li>
 	  <li>Google +: <a href="https://plus.google.com/u/1/111883356032437249842">Lorenzo Gil Sánchez</a></li>
           <li>Jabber: lorenzogilsanchez@jabber.org</li>
-          <li>Public SSH key</li>
-          <li>Public GPG key</li>
+          <li>
+	    <button>Public SSH key</button>
+	    <textarea readonly="readonly" rows="8" cols="52" style="display: none">
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDiN3Gjw2GwWEci
+K9y0XLRLqFPxbwEekzTfEy2ljlr2I8jURpNP4r7/QvK7BcyMp1UO
+kPIDoedoVXPbdEMINH0htWYO97Mtsz9iVVhCRxHFsU6UxVt9/bkt
+7fVeHW7yohAjcsfFz/OQxx5IIdXyuf3kIQllIXTDO4TF5N+d75pm
+CLqMGoSzdtxJOTBQj/9Sz4sV6AtmWfOtqisn0jNJTYprNgvIqw5t
+XlBZcn1e584l/zZLxWz+tdjEWzDEVowDAP/4jaw8V6BHimmDZwfa
+jQ/v2mSOCGWLaxqDE+g93BC6BY6a835P0vh/iwbAqHwPwXfdUNnT
+mIPAT/ddau6Bjo5l lorenzo.gil.sanchez@gmail.com</textarea>
+	  </li>
+          <!--<li>Public GPG key</li>-->
 	</ul>
       </div>
 
@@ -233,16 +246,24 @@
 
 
   <!-- JavaScript at the bottom for fast page loading -->
+  <script src="js/libs/jquery-1.7.1.min.js"></script>
 
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-  <!-- end scripts -->
-
+  <script type="text/javascript">
+    (function ($) {
+        $(document).ready(function () {
+            $("button").toggle(
+                function () {
+                    $(this).next("textarea").slideDown(function () {
+                        this.select();
+                    });
+                },
+                function () {
+                    $(this).next("textarea").slideUp();
+                }
+            );
+        });
+    }(jQuery));
+  </script>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>
