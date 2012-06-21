@@ -21,6 +21,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/colorbox.css">
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
@@ -203,15 +204,39 @@
     <div class="container">
 
       <div id="identity" class="column">
-	<h2>Identities</h2>
-	<ul>
+	    <h2>Identities</h2>
+	    <ul>
           <li>Mail: <a href="mailto:lorenzo.gil.sanchez@gmail.com">lorenzo.gil.sanchez@gmail.com</a></li>
           <li>Twitter: <a href="https://twitter.com/#!/lorenzogil">lorenzogil</a></li>
-	  <li>Google +: <a href="https://plus.google.com/u/1/111883356032437249842">Lorenzo Gil Sánchez</a></li>
+	      <li>Google +: <a href="https://plus.google.com/u/1/111883356032437249842">Lorenzo Gil Sánchez</a></li>
           <li>Jabber: lorenzogilsanchez@jabber.org</li>
-          <li>
-	    <button>Public SSH key</button>
-	    <textarea readonly="readonly" rows="8" cols="52" style="display: none">
+          <li><a href="#public-ssh-key" class="popupTrigger">Public SSH Key</a></li>
+          <!--<li>Public GPG key</li>-->
+	    </ul>
+      </div>
+
+      <div id="websites" class="column">
+	    <h2>Websites</h2>
+	    <ul>
+          <li><a href="http://www.lorenzogil.com/blog/">Blog</a></li>
+          <li><a href="https://bitbucket.org/lgs/">Bitbucket</a></li>
+          <li><a href="https://github.com/lorenzogil">Github</a></li>
+          <li><a href="http://stackoverflow.com/users/106040/lgs">Stackoverflow</a></li>
+          <li><a href="https://es.linkedin.com/pub/lorenzo-gil/4/453/a97">LinkedIn</a></li>
+          <li><a href="http://lgs.users.sourceforge.net/">Sourceforge</a></li>
+          <li><a href="http://www.advogato.org/person/lgs/">Advogato</a></li>
+	    </ul>
+      </div>
+
+      <div class="clearfix">
+        <a href="#credits" class="popupTrigger">Credits</a>
+      </div>
+
+    </div>
+
+    <div id="public-ssh-key" class="popup">
+	  <h2>Public SSH key</h2>
+	  <textarea readonly="readonly" rows="8" cols="52">
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDiN3Gjw2GwWEci
 K9y0XLRLqFPxbwEekzTfEy2ljlr2I8jURpNP4r7/QvK7BcyMp1UO
 kPIDoedoVXPbdEMINH0htWYO97Mtsz9iVVhCRxHFsU6UxVt9/bkt
@@ -220,26 +245,21 @@ CLqMGoSzdtxJOTBQj/9Sz4sV6AtmWfOtqisn0jNJTYprNgvIqw5t
 XlBZcn1e584l/zZLxWz+tdjEWzDEVowDAP/4jaw8V6BHimmDZwfa
 jQ/v2mSOCGWLaxqDE+g93BC6BY6a835P0vh/iwbAqHwPwXfdUNnT
 mIPAT/ddau6Bjo5l lorenzo.gil.sanchez@gmail.com</textarea>
-	  </li>
-          <!--<li>Public GPG key</li>-->
-	</ul>
-      </div>
+    </div>
 
-      <div id="websites" class="column">
-	<h2>Websites</h2>
-	<ul>
-          <li><a href="http://www.lorenzogil.com/blog/">Blog</a></li>
-          <li><a href="https://bitbucket.org/lgs/">Bitbucket</a></li>
-          <li><a href="https://github.com/lorenzogil">Github</a></li>
-          <li><a href="http://stackoverflow.com/users/106040/lgs">Stackoverflow</a></li>
-          <li><a href="https://es.linkedin.com/pub/lorenzo-gil/4/453/a97">LinkedIn</a></li>
-          <li><a href="http://lgs.users.sourceforge.net/">Sourceforge</a></li>
-          <li><a href="http://www.advogato.org/person/lgs/">Advogato</a></li>
-	</ul>
-      </div>
+    <div id="credits" class="popup">
+      <h2>Credits</h2>
+      <ul>
+        <li><a href="http://jquery.org/">jQuery</a> by John Resig and many contributors. MIT/GPL license</li>
+        <li><a href="http://www.modernizr.com/">Modernizr</a> by Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon and Alexander Farkas. MIT/BSD license</li>
+        <li><a href="https://github.com/necolas/normalize.css">Normalize.css.</a> by Nicolas Gallagher. Public Domain</li>
+        <li><a href="http://html5boilerplate.com/colorbox">HTML5 Boilerplate</a> by Nicolas Gallagher, Divya Manian, Hans Christian Reinl, Shichuan , Mathias Bynens, Mickael Daniel, Jonathan Verrecchia, Rob Larsen, Catalin Maris, Paul Irish, Mike West and more contributors. Public domain</li>
+        <li><a href="http://www.jacklmoore.com/colorbox">Colorbox</a> by Jack Moore. MIT License</li>
+        <li>Icons from <a href="http://thenounproject.com/">The Noun Project</a>: "Butterfly" symbol by The Noun Project, "Lock" symbol by Andrew Forrester, from The Noun Project, "Pie chart" symbol by Scott Lewis, from The Noun Project, "Puzzle" symbol by Oliver Guin, from The Noun Project, "Education" symbol by Chris Matthews, from The Noun Project, "Plane" symbol by Simon Chld, from The Noun Project, "Thinking" symbol by Jack Biesek et al, from The Noun Project,"Grauate Cap" symbol by Marc Haumann, from The Noun Project, "Sharing" symbol by Anand Nair, from The Noun Project, "Swiss Army Knife" symbol by Oliver Guin, from The Noun Project, "Beer" symbol by The Noun Project, "User" symbol by Simon Child, from The Noun Project, "Planet" symbol by John Caserta, from The Noun Project, "Key" symbol by Egor Culcea, from The Noun Project and "People" symbol by The Noun Project</li>
+        <li>Other icons: Python logo by the <a href="http://www.python.org/psf/">Python Foundation</a>, OSI logo by the <a href="http://www.opensource.org/">Open Source Initiative</a> and HTML5 logo by the <a href="http://www.w3.org/html/logo/">W3C</a></li>
+      </ul>
 
-      <div class="clearfix"></div>
-
+      <p>Inspirated on <a href="http://jorgebastida.com/">Jorge Bastida</a></p>
     </div>
 
   </footer>
@@ -247,23 +267,10 @@ mIPAT/ddau6Bjo5l lorenzo.gil.sanchez@gmail.com</textarea>
 
   <!-- JavaScript at the bottom for fast page loading -->
   <script src="js/libs/jquery-1.7.1.min.js"></script>
+  <script src="js/libs/jquery.colorbox-min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
 
-  <script type="text/javascript">
-    (function ($) {
-        $(document).ready(function () {
-            $("button").toggle(
-                function () {
-                    $(this).next("textarea").slideDown(function () {
-                        this.select();
-                    });
-                },
-                function () {
-                    $(this).next("textarea").slideUp();
-                }
-            );
-        });
-    }(jQuery));
-  </script>
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
        mathiasbynens.be/notes/async-analytics-snippet -->
   <script>

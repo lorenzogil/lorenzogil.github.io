@@ -261,6 +261,8 @@ h2 {
 #hobbies h2 { background-position: 0px -392px; }
 #identity h2 { background-position: 0px -420px; }
 #websites h2 { background-position: 0px -448px; }
+#public-ssh-key h2 { background-position: 0px -476px; }
+#credits h2 { background-position: 0px -504px; }
 
 footer { color: #ffffff; background: #555555; }
 
@@ -268,8 +270,10 @@ footer h2, footer a { color: #ffffff; }
 footer a:visited { color: #cccccc; }
 footer textarea { display: block;}
 
+.js .popup { display: none; padding: 0.5em 1em; }
+.js .popup h2 { margin-bottom: 1em; }
 
-
+a[href="#credits"] { float: right; }
 
 
 
