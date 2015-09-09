@@ -1,0 +1,4 @@
+# Sphinx inventory version 1
+# Project: repoze.what.plugins.hgwebdir
+# Version: 0.1.1
+repoze.what.plugins.hgwebdir mod index.html

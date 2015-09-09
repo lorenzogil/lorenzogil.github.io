@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The repoze.what Hgwebdir plugin &mdash; repoze.what.plugins.hgwebdir v0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="repoze.what.plugins.hgwebdir v0.1.0 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">repoze.what.plugins.hgwebdir v0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-repoze-what-hgwebdir-plugin">
+<h1>The <tt class="xref py py-mod docutils literal"><span class="pre">repoze.what</span></tt> Hgwebdir plugin<a class="headerlink" href="#the-repoze-what-hgwebdir-plugin" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Author:</th><td class="field-body">Yaco Sistemas (Lorenzo Gil)</td>
+</tr>
+<tr class="field"><th class="field-name">Latest release:</th><td class="field-body">0.1.0</td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="module-repoze.what.plugins.hgwebdir"></span><div class="topic">
+<p class="topic-title first">Overview</p>
+<p>This plugin allows to override the hgwebdir authorization support with
+a more sophisticated one that allows more flexibility and maintainability.</p>
+<p>It allows to define your repository access information in a single file
+and has some utility functions to protect a wsgi application like
+Mercurial include hgwebdir.</p>
+</div>
+<div class="section" id="how-to-install">
+<h2>How to install<a class="headerlink" href="#how-to-install" title="Permalink to this headline">¶</a></h2>
+<p>The minimum requirements are <tt class="xref py py-mod docutils literal"><span class="pre">repze.what</span></tt> and you can install it all
+with <tt class="docutils literal"><span class="pre">easy_install</span></tt>:</p>
+<div class="highlight-python"><pre>easy_install repoze.what.plugins.hgwebdir</pre>
+</div>
+<p>The development mainline is available at the following Mercurial repository:</p>
+<div class="highlight-python"><pre>hg clone http://bitbucket.org/lgs/repoze.what.plugins.hgwebdir</pre>
+</div>
+</div>
+<div class="section" id="how-to-get-help">
+<h2>How to get help<a class="headerlink" href="#how-to-get-help" title="Permalink to this headline">¶</a></h2>
+<p>The prefered place to ask questions is the #yaco.es <a class="reference external" href="irc://irc.freenode.net/#repoze">#yaco.es</a> IRC channel. Bugs reports and feature
+requests should be sent to <a class="reference external" href="http://bitbucket.org/lgs/repoze.what.plugins.hgwebdir/issues?status=new&amp;status=open">the issue tracker of Bitbucket</a>.</p>
+</div>
+<div class="section" id="how-to-use-it">
+<h2>How to use it<a class="headerlink" href="#how-to-use-it" title="Permalink to this headline">¶</a></h2>
+<p>This plugin includes a repoze.what Group source, a Permission source, a couple
+of predicate checkers and an utility middleware to protect the hgwebdir
+application.</p>
+<div class="section" id="group-and-permission-sources">
+<h3>Group and permission sources<a class="headerlink" href="#group-and-permission-sources" title="Permalink to this headline">¶</a></h3>
+<p>The group and permission sources are based on Subversion mod_authz_svn and they
+both use a single file very similar to the one Subversion uses. This file
+is a ini like configuration file where you have sections and inside them,
+you have options and values.</p>
+<p>The first section is a special one called <tt class="docutils literal"><span class="pre">groups</span></tt>. In this section
+you define the groups of users that you have. To define a group put the
+name of the group as the option name and the user names of the members of
+such groups as the value. The members is a list of user ids separated by
+spaces and (optionally) commas.</p>
+<p>Let&#8217;s see an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">groups</span><span class="p">]</span>
+<span class="n">rolling</span> <span class="o">=</span> <span class="n">mick</span><span class="p">,</span> <span class="n">keith</span><span class="p">,</span> <span class="n">ronnie</span><span class="p">,</span> <span class="n">charlie</span>
+<span class="n">beatles</span> <span class="o">=</span> <span class="n">john</span><span class="p">,</span> <span class="n">paul</span><span class="p">,</span> <span class="n">george</span><span class="p">,</span> <span class="n">ringo</span>
+</pre></div>
+</div>
+<p>Here you have two groups, each one having four members.</p>
+<p>After the groups section you will have a section for each Mercurial
+repository you want to serve. If you have a repository and it is not
+listed on this file the default behaviour is to forbid any access to it.</p>
+<p>So you have a section for each repository. Inside the section you define who
+can access to it. There are basically two operations on a repository, reading
+it or writing to it. So each option inside a repository will define who
+can read or write it. A option starting with <tt class="docutils literal"><span class="pre">&#64;</span></tt> references the name of
+a group (from the groups section). A option without the <tt class="docutils literal"><span class="pre">&#64;</span></tt> means just
+a user id. An <tt class="docutils literal"><span class="pre">*</span></tt> means <tt class="docutils literal"><span class="pre">everybody</span></tt>. The value can be <tt class="docutils literal"><span class="pre">r</span></tt>, <tt class="docutils literal"><span class="pre">w</span></tt> or
+<tt class="docutils literal"><span class="pre">rw</span></tt> if you want to give read, write or read and write access respectively.</p>
+<p>Let&#8217;s see another example:</p>
+<div class="highlight-python"><pre>[sticky-fingers]
+@rolling = rw
+@beatles = r
+
+[sargent-peppers]
+@beatles = rw
+@rolling = r
+
+[pet-sounds]
+* = r</pre>
+</div>
+<p>Here there are three repositories: <tt class="docutils literal"><span class="pre">sticky-fingers</span></tt>, <tt class="docutils literal"><span class="pre">sargent-peppers</span></tt>
+and <tt class="docutils literal"><span class="pre">pet-sounds</span></tt>. In the <tt class="docutils literal"><span class="pre">sticky-fingers</span></tt> repository the members of the
+<tt class="docutils literal"><span class="pre">rolling</span></tt> group have read and write permissions while the members of the
+<tt class="docutils literal"><span class="pre">beatles</span></tt> group have only read permissions. In the <tt class="docutils literal"><span class="pre">sargent-peppers</span></tt>
+repository is the other way around and lastly, in the <tt class="docutils literal"><span class="pre">pet-sounds</span></tt>
+repository, everybody have read access and nobody can write.</p>
+<p>Now you are ready to use the HgwebdirGroupsAdapter and the
+HgwebdirPermissionsAdapter. The only thing both of these classes need is
+the path to your authz file. Theorically you can instantiate each of
+these classes with a different auth file but in practice that doesn&#8217;t make
+much sense.</p>
+<p>Let&#8217;s see a full example of how o integrate these sources with the rest
+of repoze.what and repoze.who funcionality:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">repoze.who.plugins.basicauth</span> <span class="kn">import</span> <span class="n">BasicAuthPlugin</span>
+<span class="kn">from</span> <span class="nn">repoze.who.plugins.htpasswd</span> <span class="kn">import</span> <span class="n">HTPasswdPlugin</span><span class="p">,</span> <span class="n">crypt_check</span>
+<span class="kn">from</span> <span class="nn">repoze.what.middleware</span> <span class="kn">import</span> <span class="n">setup_auth</span>
+
+<span class="kn">from</span> <span class="nn">repoze.what.plugins.hgwebdir.adapters</span> <span class="kn">import</span> <span class="n">HgwebdirGroupsAdapter</span>
+<span class="kn">from</span> <span class="nn">repoze.what.plugins.hgwebdir.adapters</span> <span class="kn">import</span> <span class="n">HgwebdirPermissionsAdapter</span>
+
+
+<span class="k">def</span> <span class="nf">add_auth</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">users_file</span><span class="p">,</span> <span class="n">authz_file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add authentication and authorization middleware to the ``app``.</span>
+
+<span class="sd">    :param app: The WSGI application.</span>
+<span class="sd">    :param users_file: a httpasswd file with users and passwords</span>
+<span class="sd">    :param authz_file: an ini file with group and permissions</span>
+<span class="sd">    :return: The same WSGI application, with authentication and</span>
+<span class="sd">        authorization middleware.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">groups</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;all_groups&#39;</span><span class="p">:</span> <span class="n">HgwebdirGroupsAdapter</span><span class="p">(</span><span class="n">authz_file</span><span class="p">)}</span>
+
+    <span class="n">permissions</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;all_perms&#39;</span><span class="p">:</span> <span class="n">HgwebdirPermissionsAdapter</span><span class="p">(</span><span class="n">authz_file</span><span class="p">)}</span>
+
+    <span class="n">basicauth</span> <span class="o">=</span> <span class="n">BasicAuthPlugin</span><span class="p">(</span><span class="s">&#39;Your realm&#39;</span><span class="p">)</span>
+    <span class="n">identifiers</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;basicauth&#39;</span><span class="p">,</span> <span class="n">basicauth</span><span class="p">)]</span>
+
+    <span class="n">htpasswd_auth</span> <span class="o">=</span> <span class="n">HTPasswdPlugin</span><span class="p">(</span><span class="n">users_file</span><span class="p">,</span> <span class="n">crypt_check</span><span class="p">)</span>
+    <span class="n">authenticators</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;htpasswd_auth&#39;</span><span class="p">,</span> <span class="n">htpasswd_auth</span><span class="p">)]</span>
+
+    <span class="n">challengers</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&#39;basicauth&#39;</span><span class="p">,</span> <span class="n">basicauth</span><span class="p">)]</span>
+
+    <span class="n">app_with_auth</span> <span class="o">=</span> <span class="n">setup_auth</span><span class="p">(</span>
+        <span class="n">app</span><span class="p">,</span>
+        <span class="n">groups</span><span class="p">,</span>
+        <span class="n">permissions</span><span class="p">,</span>
+        <span class="n">identifiers</span><span class="o">=</span><span class="n">identifiers</span><span class="p">,</span>
+        <span class="n">authenticators</span><span class="o">=</span><span class="n">authenticators</span><span class="p">,</span>
+        <span class="n">challengers</span><span class="o">=</span><span class="n">challengers</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">app_with_auth</span>
+</pre></div>
+</div>
+<p>In the repoze.what.plugins.hgwebdir.adapters module ther is another
+function called <tt class="docutils literal"><span class="pre">get_public_repositories</span></tt>. It needs the path to the
+authz file and will return a list of repository names that are public. A
+repository is public if it has at least an option like <tt class="docutils literal"><span class="pre">*</span> <span class="pre">=</span> <span class="pre">r</span></tt>. In the
+above example this function would return a list with one element, the
+<tt class="docutils literal"><span class="pre">pet-sounds</span></tt> repository:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">repoze.what.plugins.hgwebdir.adapters</span> <span class="kn">import</span> <span class="n">get_public_repositories</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_public_repositories</span><span class="p">(</span><span class="s">&#39;/path/to/authz.ini&#39;</span><span class="p">)</span>
+<span class="go">[u&#39;pet-sounds&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="predicate-checkers">
+<h3>Predicate checkers<a class="headerlink" href="#predicate-checkers" title="Permalink to this headline">¶</a></h3>
+<p>This plugin has two new predicate checkers: <tt class="docutils literal"><span class="pre">is_read_access</span></tt> and
+<tt class="docutils literal"><span class="pre">has_repo_access</span></tt>.</p>
+<p>The <tt class="docutils literal"><span class="pre">is_read_access</span></tt> predicate checker is quite simple since it does not
+need any parameter in its constructor and it just check whetever the request
+is using a GET http verb or not:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">repoze.what.plugins.hgwebdir.predicates</span> <span class="kn">import</span> <span class="n">is_read_access</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">is_read_access</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The other predicate checker, <tt class="docutils literal"><span class="pre">has_repo_access</span></tt> is quite more interesting.
+It is a compuound predicate checker that test several things. It needs the
+name of the repository it is trying to protect and It will allow
+access to such resource if any of the following assertions is true:</p>
+<ul class="simple">
+<li>The request is a read action and the user has the permission made from the
+name of the repository plus the string <tt class="docutils literal"><span class="pre">-read</span></tt>. For example, if the
+repository is called <tt class="docutils literal"><span class="pre">project23</span></tt> the user will need the permission
+<tt class="docutils literal"><span class="pre">project23-read</span></tt>.</li>
+<li>The request is not a read action and the user has the permission made from
+the name of the repository plus the string <tt class="docutils literal"><span class="pre">-write</span></tt>. For example, if the
+repository is called <tt class="docutils literal"><span class="pre">project23</span></tt> the user will need the permission
+<tt class="docutils literal"><span class="pre">project23-write</span></tt>.</li>
+<li>The request is a read action and the repository is public.</li>
+</ul>
+<p>This predicate checker has two construction parameters:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">repo_name</span></tt>: the name of the repository</li>
+<li><tt class="docutils literal"><span class="pre">public_repos</span></tt>: a list of repository names that are public</li>
+</ul>
+<p>Let&#8217;s see an example of its use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">repoze.what.plugins.hgwebdir.predicates</span> <span class="kn">import</span> <span class="n">has_repo_access</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">has_repo_access</span><span class="p">(</span><span class="s">&#39;project12&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;public-project1&#39;</span><span class="p">,</span> <span class="s">&#39;public-project2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="middleware">
+<h3>Middleware<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h3>
+<p>In the middleware land of this plugin you will find a single function, the
+<tt class="docutils literal"><span class="pre">protect_repositories</span></tt> callable. Give it the wsgi application that
+is returned by the mercurial.hgweb.hgwebdir_mod.hgwebdir function and
+it will add authorization support by using the <tt class="docutils literal"><span class="pre">has_repo_access</span></tt> predicate
+checker that is explained above.</p>
+<p>The second argument to the <tt class="docutils literal"><span class="pre">protect_repositories</span></tt> function is a list
+of public repositories. These repositories should be granted read access
+to everybody.</p>
+<p>As you can see this function ties everything together into a useful piece
+of middleware. Let&#8217;s see an example of its use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">mercurial.hgweb.hgwebdir_mod</span> <span class="kn">import</span> <span class="n">hgwebdir</span>
+
+<span class="kn">from</span> <span class="nn">repoze.what.plugins.hgwebdir.adapters</span> <span class="kn">import</span> <span class="n">get_public_repositories</span>
+<span class="kn">from</span> <span class="nn">repoze.what.plugins.hgwebdir.middleware</span> <span class="kn">import</span> <span class="n">protect_repositories</span>
+
+<span class="k">def</span> <span class="nf">make_app</span><span class="p">(</span><span class="n">hg_config</span><span class="p">,</span> <span class="n">users_file</span><span class="p">,</span> <span class="n">authz_file</span><span class="p">):</span>
+    <span class="n">original_app</span> <span class="o">=</span> <span class="n">hgwebdir</span><span class="p">(</span><span class="n">hg_config</span><span class="p">)</span>
+    <span class="n">secured_app</span> <span class="o">=</span> <span class="n">protect_repositories</span><span class="p">(</span><span class="n">original_app</span><span class="p">,</span>
+                                       <span class="n">get_public_repositories</span><span class="p">(</span><span class="n">authz_file</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">add_auth</span><span class="p">(</span><span class="n">secured_app</span><span class="p">,</span> <span class="n">users_file</span><span class="p">,</span> <span class="n">authz_file</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">add_auth</span></tt> function was explained in the Group and Permissions sources
+section.</p>
+</div>
+</div>
+<div class="section" id="contents">
+<h2>Contents:<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The <tt class="docutils literal"><span class="pre">repoze.what</span></tt> Hgwebdir plugin</a><ul>
+<li><a class="reference internal" href="#how-to-install">How to install</a></li>
+<li><a class="reference internal" href="#how-to-get-help">How to get help</a></li>
+<li><a class="reference internal" href="#how-to-use-it">How to use it</a><ul>
+<li><a class="reference internal" href="#group-and-permission-sources">Group and permission sources</a></li>
+<li><a class="reference internal" href="#predicate-checkers">Predicate checkers</a></li>
+<li><a class="reference internal" href="#middleware">Middleware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contents">Contents:</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">repoze.what.plugins.hgwebdir v0.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, Yaco Sistemas.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.4.
+    </div>
+  </body>
+</html>
