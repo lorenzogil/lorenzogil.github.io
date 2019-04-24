@@ -5,40 +5,14 @@
 /* TEAM */
   Author: Lorenzo Gil Sánchez
   Site: http://www.lorenzogil.com
-  Twitter: lorenzogil
-  Location: Seville, Spain
+  Mastodon: lgs
+  Location: San Mateo, California (USA)
 
 /* THANKS */
-  Jorge Bastida (http://jorgebastida.com): for the idea and inspiration.
-  The Noun Project (http://thenounproject): for being so awesome. Also, for the icons.
+  Gabriel Rodríguez Alberich (https://gabi.is): for the idea and inspiration.
 
 /* SITE */
-  Standards: HTML5, CSS3
-  Components: Modernizr, jQuery
-  Software:
-
-
-
-                               -o/-
-                               +oo//-
-                              :ooo+//:
-                             -ooooo///-
-                             /oooooo//:
-                            :ooooooo+//-
-                           -+oooooooo///-
-           -://////////////+oooooooooo++////////////::
-            :+ooooooooooooooooooooooooooooooooooooo+:::-
-              -/+ooooooooooooooooooooooooooooooo+/::////:-
-                -:+oooooooooooooooooooooooooooo/::///////:-
-                  --/+ooooooooooooooooooooo+::://////:-
-                     -:+ooooooooooooooooo+:://////:--
-                       /ooooooooooooooooo+//////:-
-                      -ooooooooooooooooooo////-
-                      /ooooooooo+oooooooooo//:
-                     :ooooooo+/::/+oooooooo+//-
-                    -oooooo/::///////+oooooo///-
-                    /ooo+::://////:---:/+oooo//:
-                   -o+/::///////:-      -:/+o+//-
-                   :-:///////:-            -:/://
-                     -////:-                 --//:
-                       --                       -:
+  Last update: 2019-04-22
+  Language: English
+  Doctype: HTML5
+  IDE: Emacs

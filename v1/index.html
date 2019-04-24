@@ -1,0 +1,323 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Lorenzo Gil</title>
+  <meta name="description" content="Lorenzo Gil personal site">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+  <div class="container">
+
+    <header class="row">
+      <div class="col-md-3">
+        <img src="img/lgs.jpg" alt="Lorenzo Gil Sánchez" width="159" height="183" />
+      </div>
+      <div class="col-md-9 page-header">
+        <h1>Hello, I am Lorenzo Gil Sánchez. <small>Welcome to my homepage. This is what I do</small></h1>
+      </div>
+    </header>
+
+    <div role="main">
+
+      <section>
+
+        <div class="row">
+          <div class="col-md-3" id="python">
+            <h2>Python</h2>
+            <p>I've been using Python for more than 10 years and still find it as nice as the first day. From little scripts to full blown applications, I use it everyday and it's one of the reasons I love coding.</p>
+          </div>
+
+          <div class="col-md-3" id="javascript">
+            <h2>Javascript</h2>
+            <p>I used to dislike Javascript until I discovered its nice parts and learned how not to use the bad ones. Dojo, Scriptaculous, jQuery (Core, UI, Mobile) are some of the libraries I've used. </p>
+          </div>
+
+          <div class="col-md-3" id="security">
+            <h2>Security</h2>
+            <p>SAML, Oauth, PKI, x509 certificates, just to name a few, are the standards and techniques I use in my attempt to handle authentication and authorization in a robust and secure way.</p>
+          </div>
+
+          <div class="col-md-3" id="visualization">
+            <h2>Visualization</h2>
+            <p>I've been always passionated about representing data in a way humans can understand. Usually it means creating and using visualization tools. I've created several ones for this purpose.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3" id="html">
+            <h2>HTML</h2>
+            <p>I'm very picky about the use of the right tag to add as much semantic meaning as possible to a web page. I cry and scream when content, behaviour and appearance are not separated.</p>
+          </div>
+
+          <div class="col-md-3" id="css">
+            <h2>CSS</h2>
+            <p>CSS is a hard language. It took me a while to understand its box and layout model and all its implications but once you know the tricks it's amazing what you can do.</p>
+          </div>
+
+          <div class="col-md-3" id="middleware">
+            <h2>Middleware</h2>
+            <p>I like to integrate systems in a seamless way building bigger and better products. REST APIs, Message Queues, SSO are some of the tools for this craft. I always try to avoid reinventing the wheel.</p>
+          </div>
+
+          <div class="col-md-3" id="opensource">
+            <h2>Open Source</h2>
+            <p>Since the beginning of my career I've been a pasionated activist of open source. It all started as a weirdos' movement and fortunately it has evolved into the mainstream.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="row">
+
+        <div id="courses-and-talks" class="col-md-6">
+          <h2>Courses and talks given</h2>
+          <ul>
+            <li><a href="https://tnc2013.terena.org/core/user/show/id/259">TNC2013</a> The OpenMOOC project. Maastricht (Netherlands). June 2013.</li>
+            <li><a href="https://tnc2012.terena.org/core/user/show/id/813">TNC2012</a> Asyncronous provisioning using SAML2 Attribute Query. Reykjavík (Iceland). May 2012.</li>
+            <li><a href="https://refeds.org/meetings/sep11/index.html">REFEDS Meeting</a> PEER demo and project status. Helsinki (Finland). September 2011.</li>
+            <li><a href="https://spaces.internet2.edu/display/ACAMPIdSummit2010/Participants+and+Requested+Topics">InCommon Advanced CAMP: The Second Identity Services Summit</a> Raleigh (USA). June 2010</li>
+            <li><a href="">Primeras Jornadas de la Federación CONFIA</a> Antequera (Spain). January 2010.</li>
+          </ul>
+        </div>
+
+        <div id="conferences" class="col-md-6">
+          <h2>Conferences I've been to</h2>
+          <ul>
+            <li><a href="https://tnc2012.terena.org/">TNC</a> Terena Networking Conference. Reykjavík (Iceland). May 2012</li>
+            <li><a href="http://www.eduserv.org.uk/newsandevents/events/fam11">FAM11</a> Federated Access Management Conference. London (England). November 2011</li>
+            <li><a href="http://us.pycon.org/2011/home/">PyCon</a> The Python Conference. Atlanta (USA). March 2011</li>
+            <li><a href="http://2006.guadec.org">GUADEC</a> GNOME Users and Developers Conference. Vilanova i la Gertrú (Spain). June 2006</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="row">
+
+        <div id="experience" class="col-md-6">
+          <h2>Experience</h2>
+          <ul>
+            <li>Software Architect at Redbeacon/Techshed (The Home Depot), January 2015 to present.</li>
+            <li>Software Engineer at Redbeacon/Techshed (The Home Depot), June 2013 to December 2014.</li>
+            <li>Software Engineer and Project Manager at Yaco Sistemas. September 2008 to May 2013.</li>
+            <li>Software Engineer at Async Open Source. March 2005 to June 2005.</li>
+            <li>Software Engineer at Sicem. February 2003 to August 2008.</li>
+          </ul>
+        </div>
+
+        <div id="education" class="col-md-6">
+          <h2>Education</h2>
+          <ul>
+            <li><a href="https://www.futurelearn.com/courses/functional-programming-haskell">Future Learn</a> Functional Programming in Haskell</li>
+            <li><a href="http://www.udacity.com">Udacity</a> Applied Cryptography. <a href="pdfs/udacity-cs387.pdf">Certificate of Accomplishment</a></li>
+            <li><a href="https://www.ai-class.com/">The AI Class</a> Introduction to Artificial Intelligence. <a href="pdfs/aiclass.pdf">Statement of Accomplishment</a></li>
+            <li><a href="">University of California, Irvine</a> A grant allowed me to study the fifth year of a Computer Science degree in UCI</li>
+            <li><a href="">University of Granada</a> BSc in Computer Science (5-years degree). Computer Graphics speciality</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section class="row">
+
+        <div id="opensource-projects" class="col-md-6">
+          <h2>Open Source</h2>
+          <h3>Personal projects</h3>
+          <ul>
+            <li><a href="http://yithlibrary.com">Yith Library</a> Web password manager</li>
+            <li><a href="https://bitbucket.org/lgs/djangosaml2">djangosaml2</a> Bridge between pysaml2 and Django. It allows a Django project to act as a SAML2 Service Provider</li>
+            <li><a href="https://bitbucket.org/lgs/moinmoinsaml">moinmoinsaml</a> MoinMoin plugin to support SAML2 authentication.</li>
+            <li><a href="https://bitbucket.org/lgs/watc">watc</a> Where Are The Castles? is an HTML5 implementation of the popular Carcassonne game. Unfinished</li>
+            <li><a href="https://bitbucket.org/lgs/hghooks">hghooks</a> Set of useful hooks for a Mercurial repository.</li>
+            <li><a href="https://bitbucket.org/lgs/hamster-rc">hamster-rc</a> jQuery Mobile simple application to control the Hamster time tracker app remotely</li>
+            <li><a href="https://bitbucket.org/lgs/repoze.what.plugins.hgwebdir">repoze.what.plugins.hgwebdir</a> Plugin for repoze.what for easy administration of a Mercurial repository served via hgwebdir</li>
+            <li><a href="https://bitbucket.org/lgs/conga">Conga</a> Container of Gadgets, e.g., an OpenSocial implementation. Unfinished</li>
+            <li><a href="https://bitbucket.org/lgs/pycha/">Pycha</a> Python library for simple charts</li>
+            <li><a href="http://svn-archive.gnome.org/viewvc/gazpacho/">Gazpacho</a> Application to design GUI for GNOME. Discontinued</li>
+          </ul>
+
+          <h3>Contributions</h3>
+          <ul>
+            <li><a href="http://fedoraproject.org/">Fedora</a> Linux Distribution. <a href="https://admin.fedoraproject.org/pkgdb/users/packages/lgs">I am a Fedora Package Maintainer</a></li>
+            <li><a href="https://github.com/rohe/pysaml2">pysaml2</a> Python implementation of the SAML2 standard</li>
+            <li><a href="https://github.com/Pita/etherpad-lite">Etherpad Lite</a> An Etherpad based on node.js</li>
+            <li><a href="https://github.com/mozilla-services/cornice">Cornice</a> Helpers to build & document Web Services with Pyramid</li>
+            <li><a href="https://github.com/jquery/jquery-mobile">jQuery Mobile</a></li>
+            <li><a href="http://south.aeracode.org/">South</a> Intelligent schema and data migrations for ​Django projects</li>
+            <li><a href="http://www.ilias.de/">ILIAS</a> e-Learning PHP-based system</li>
+            <li><a href="http://simplesamlphp.org/">SimpleSAMLphp</a> PHP Application that deals with authentication focusing on SAML2</li>
+            <li><a href="http://www.pygtk.org/">pygtk</a> GTK+ for Python</li>
+          </ul>
+        </div>
+
+
+        <div class="col-md-6">
+
+          <div id="tools">
+            <h2>Tools I use</h2>
+            <ul>
+              <li><a href="">Fedora Linux</a>. I've used SuSE, RedHat, Debian, Gentoo and Ubuntu but I prefer Fedora as my default GNU/Linux distribution. I've been using it since it was called RedHat 8.</li>
+              <li><a href="">GNOME</a> has been always my favourite desktop environment. I was involved in the GNOME community, specially the GNOME-es community some years ago and still have good friends there.</li>
+              <li><a href="">Firefox</a> has been my default browser for a long long time (since it was called Mozilla milestone 11!) and even now that there are other very good browsers I still prefer Firefox for its philosophical values.</li>
+              <li><a href="">Emacs</a> I started using Emacs in 1999 and felt in love with it very fast. I try to learn one command every month so I'll probably call myself an Emacs expert by the end of the next century.</li>
+            </ul>
+          </div>
+
+          <div id="hobbies">
+            <h2>Hobbies</h2>
+            <ul>
+              <li><a href="http://boardgamegeek.com/user/lorenzogil">Board games</a></li>
+              <li>Books, paper and e-ink ones too</li>
+              <li><a href="http://www.arduino.cc/">Arduino</a></li>
+              <li>Video games</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </div> <!-- main container -->
+
+  <footer>
+    <div class="container">
+      <div class="row">
+
+        <div id="identity" class="col-md-6">
+          <h2>Identities</h2>
+          <ul>
+            <li>Mail: <a href="mailto:lorenzo.gil.sanchez@gmail.com">lorenzo.gil.sanchez@gmail.com</a></li>
+            <li>Twitter: <a href="https://twitter.com/#!/lorenzogil">lorenzogil</a></li>
+            <li>Google +: <a href="https://plus.google.com/u/1/111883356032437249842">Lorenzo Gil Sánchez</a></li>
+            <li>Jabber: lorenzogilsanchez@jabber.org</li>
+            <li><a href="#public-ssh-key" data-toggle="modal">Public SSH Key <span class="glyphicon glyphicon-new-window"></span></a></li>
+            <li><a href="https://keybase.io/lgs">Public GPG key</a></li>
+          </ul>
+        </div>
+
+        <div id="websites" class="col-md-6">
+          <h2>Websites</h2>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="https://bitbucket.org/lgs/">Bitbucket</a></li>
+            <li><a href="https://github.com/lorenzogil">Github</a></li>
+            <li><a href="http://stackoverflow.com/users/106040/lgs">Stackoverflow</a></li>
+            <li><a href="https://es.linkedin.com/pub/lorenzo-gil/4/453/a97">LinkedIn</a></li>
+            <li><a href="http://lgs.users.sourceforge.net/">Sourceforge</a></li>
+            <li><a href="http://www.advogato.org/person/lgs/">Advogato</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li><a href="#credits" data-toggle="modal">Credits <span class="glyphicon glyphicon-new-window"></span></a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <div id="public-ssh-key" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Public SSH key</h4>
+        </div>
+        <div class="modal-body">
+          <textarea class="form-control" disabled="disabled" rows="8" cols="52">
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDiN3Gjw2GwWEci
+            K9y0XLRLqFPxbwEekzTfEy2ljlr2I8jURpNP4r7/QvK7BcyMp1UO
+            kPIDoedoVXPbdEMINH0htWYO97Mtsz9iVVhCRxHFsU6UxVt9/bkt
+            7fVeHW7yohAjcsfFz/OQxx5IIdXyuf3kIQllIXTDO4TF5N+d75pm
+            CLqMGoSzdtxJOTBQj/9Sz4sV6AtmWfOtqisn0jNJTYprNgvIqw5t
+            XlBZcn1e584l/zZLxWz+tdjEWzDEVowDAP/4jaw8V6BHimmDZwfa
+            jQ/v2mSOCGWLaxqDE+g93BC6BY6a835P0vh/iwbAqHwPwXfdUNnT
+            mIPAT/ddau6Bjo5l lorenzo.gil.sanchez@gmail.com</textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="credits" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">Credits</h4>
+        </div>
+        <div class="modal-body">
+          <ul>
+            <li><a href="http://jquery.org/">jQuery</a> by John Resig and many contributors. MIT/GPL license</li>
+            <li><a href="http://getbootstrap.com/">Bootstrap</a> by Mark Otto and Jacob Thornton</li>
+            <li><a href="http://www.modernizr.com/">Modernizr</a> by Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon and Alexander Farkas. MIT/BSD license</li>
+            <li><a href="https://github.com/necolas/normalize.css">Normalize.css.</a> by Nicolas Gallagher. Public Domain</li>
+            <li><a href="http://html5boilerplate.com/colorbox">HTML5 Boilerplate</a> by Nicolas Gallagher, Divya Manian, Hans Christian Reinl, Shichuan , Mathias Bynens, Mickael Daniel, Jonathan Verrecchia, Rob Larsen, Catalin Maris, Paul Irish, Mike West and more contributors. Public domain</li>
+            <li>Icons from <a href="http://thenounproject.com/">The Noun Project</a>: "Butterfly" symbol by The Noun Project, "Lock" symbol by Andrew Forrester, from The Noun Project, "Pie chart" symbol by Scott Lewis, from The Noun Project, "Puzzle" symbol by Oliver Guin, from The Noun Project, "Education" symbol by Chris Matthews, from The Noun Project, "Plane" symbol by Simon Chld, from The Noun Project, "Thinking" symbol by Jack Biesek et al, from The Noun Project,"Grauate Cap" symbol by Marc Haumann, from The Noun Project, "Sharing" symbol by Anand Nair, from The Noun Project, "Swiss Army Knife" symbol by Oliver Guin, from The Noun Project, "Beer" symbol by The Noun Project, "User" symbol by Simon Child, from The Noun Project, "Planet" symbol by John Caserta, from The Noun Project, "Key" symbol by Egor Culcea, from The Noun Project and "People" symbol by The Noun Project</li>
+            <li>Other icons: Python logo by the <a href="http://www.python.org/psf/">Python Foundation</a>, OSI logo by the <a href="http://www.opensource.org/">Open Source Initiative</a> and HTML5 logo by the <a href="http://www.w3.org/html/logo/">W3C</a></li>
+          </ul>
+
+          <p>Inspirated on <a href="http://jorgebastida.com/">Jorge Bastida</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+  <script src="js/libs/jquery-2.0.3.min.js"></script>
+  <script src="js/libs/bootstrap.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-2840456-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
